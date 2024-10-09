@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/school_forum?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: 0209
+  web:
+    resources:
+      add-mappings: false
