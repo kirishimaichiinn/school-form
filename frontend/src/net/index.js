@@ -16,7 +16,7 @@ function post(url, data, success, failure = defaultFailure, error = defaultError
         else
             failure(data.msg)
     }).catch((reason)=>{
-        if(reason.status === 500)
+        if(reason.response !==null && reason.response.data === '')
             ElMessage.error("连接超时")
         else
             error()
@@ -28,10 +28,10 @@ function get(url,success, failure = defaultFailure, error = defaultError) {
         withCredentials:true
     }).then((response) => {
         const data = response.data
-        if (data.code === 200)
+        if (response.status === 200)
             success(data)
         else
-            failure(data.message)
+            failure(data.msg)
     }).catch(error)
 }
 

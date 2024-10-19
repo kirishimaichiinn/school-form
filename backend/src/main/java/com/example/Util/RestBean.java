@@ -17,8 +17,8 @@ public class RestBean{
         return new ResponseEntity<>(new RestData<>(null,msg), HttpStatus.valueOf(code));
     }
 
-    public static <T> ResponseEntity<RestData<T>> failure(int code) {
-        return new ResponseEntity<>(new RestData<>(null,"failure"), HttpStatus.valueOf(code));
+    public static <T> ResponseEntity<RestData<T>> failure(String msg) {
+        return new ResponseEntity<>(new RestData<>(null,msg), HttpStatus.valueOf(202));
     }
 
     public record RestData<T>(T data, String msg) {}

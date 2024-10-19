@@ -3,6 +3,7 @@ package com.example.config;
 import com.example.Util.RestBean;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
+import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.NoHandlerFoundException;
@@ -17,6 +18,11 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(HttpRequestMethodNotSupportedException.class)
     public ResponseEntity<RestBean.RestData<Object>> handleHttpRequestMethodNotSupportedException(HttpRequestMethodNotSupportedException ex) {
         return RestBean.failure(405, "方法不允许");
+    }
+
+    @ExceptionHandler(MissingServletRequestParameterException.class)
+    public ResponseEntity<RestBean.RestData<Object>> handleMissingServletRequestParameterException(MissingServletRequestParameterException ex) {
+        return RestBean.failure("缺少参数");
     }
 
     @ExceptionHandler(Exception.class)

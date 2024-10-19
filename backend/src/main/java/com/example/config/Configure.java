@@ -1,5 +1,6 @@
 package com.example.config;
 
+import com.example.Util.JwtUtil;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -13,5 +14,9 @@ public class Configure {
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
+    }
+    @Bean
+    public JwtUtil jwtUtil() {
+        return new JwtUtil();
     }
 }
