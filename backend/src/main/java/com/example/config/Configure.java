@@ -1,5 +1,6 @@
 package com.example.config;
 
+import com.example.Util.ConstConfig;
 import com.example.Util.JwtUtil;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,8 +16,14 @@ public class Configure {
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
+
     @Bean
     public JwtUtil jwtUtil() {
         return new JwtUtil();
+    }
+
+    @Bean
+    public ConstConfig constConfig() {
+        return new ConstConfig();
     }
 }

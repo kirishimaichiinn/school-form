@@ -26,7 +26,13 @@ public class TokenFilter implements Filter {
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         HttpServletRequest httpRequest = (HttpServletRequest) servletRequest;
         HttpServletResponse httpResponse = (HttpServletResponse) servletResponse;
+        String path = httpRequest.getRequestURI();
         String token = httpRequest.getParameter("token");
+
+        if (!path.matches("/api/post/.*") || path.equals("/api/post/getPostHeadList")){
+            filterChain.doFilter(servletRequest, servletResponse);
+            return;
+        }
 
         httpResponse.setContentType("application/json");
         httpResponse.setCharacterEncoding("UTF-8");

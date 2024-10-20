@@ -14,8 +14,12 @@
         </div>
       </el-header>
       <el-main>
-        <br>
         这是主页
+        <el-table :data="tableData" stripe border @row-click="tableRowClick" style="width: 100%">
+          <el-table-column prop="title" label="title" />
+          <el-table-column prop="author_name" label="author_name" width="180" />
+          <el-table-column prop="last_reply" label="last_reply" :formatter="formatLast_reply" width="180" />
+        </el-table>
       </el-main>
     </el-container>
   </div>
@@ -25,19 +29,29 @@
 import router from "@/router/index.js";
 import {checkMe} from "@/net/auth/checkMe.js";
 import {ElMessage} from "element-plus";
+import {getPostHeadList} from "@/net/post/getPostHead.js";
+import {formatLast_reply} from "@/net/mainView/formatLast_reply.js";
+import {tableRowClick} from "@/net/mainView/tableRowClick.js";
 
 let logged = ref(false);
 let nickname;
+let page = ref(1);
 onBeforeMount(() => {
   checkMe(()=>{logged.value = true});
 })
 onMounted(() => {
   nickname = localStorage.getItem('nickname')
+  getPostHeadList(page,tableData)
 })
 const test = function () {
+  getPostHeadList(ref(1))
 }
+
+const tableData = ref([])
 </script>
 
-<style scoped>
-
+<style>
+.el-table__header-wrapper{
+  display: none;
+}
 </style>

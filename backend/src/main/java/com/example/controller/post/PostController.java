@@ -3,7 +3,6 @@ package com.example.controller.post;
 import com.example.Util.RestBean;
 import com.example.entity.auth.Account;
 import com.example.entity.post.PostHead;
-import com.example.service.auth.AccountService;
 import com.example.service.post.PostService;
 import jakarta.annotation.Resource;
 import org.springframework.http.ResponseEntity;
@@ -18,7 +17,7 @@ public class PostController {
     PostService postService;
 
     @PostMapping("/addPost")
-    public ResponseEntity<RestBean.RestData<String>> addPost(@RequestAttribute("account") Account account, @RequestParam("title") String title, @RequestParam("text") String text) {
+    public ResponseEntity<RestBean.RestData<Object>> addPost(@RequestAttribute("account") Account account, @RequestParam("title") String title, @RequestParam("text") String text) {
         PostHead postHead = new PostHead();
 
         postHead.setTitle(title);
@@ -30,8 +29,13 @@ public class PostController {
         return postService.addPostHead(postHead);
     }
 
-    @PostMapping("/checkMe")
+    @PostMapping("/getPostHeadList")
+    public ResponseEntity<RestBean.RestData<Object>> getPostHeadList(@RequestParam("page") int page){
+        return postService.getPostHeadList(page);
+    }
+
+    /*@PostMapping("/checkMe")
     public ResponseEntity<RestBean.RestData<String>> checkMe(@RequestAttribute("account") Account account) {
         return RestBean.success("OK");
-    }
+    }*/
 }
