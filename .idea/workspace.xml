@@ -4,20 +4,46 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3008b374-7e15-4b34-9cce-3090a3b6b5b7" name="更改" comment="用户注册与登录&#10;发帖功能">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/Util/ConstConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/net/mainView/formatLast_reply.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/net/mainView/tableRowClick.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/net/post/getPostHead.js" afterDir="false" />
+    <list default="true" id="3008b374-7e15-4b34-9cce-3090a3b6b5b7" name="更改" comment="主页获取贴子&#10;点击贴子跳入贴子">
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/Util/FailureRestException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/controller/read/ReadController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/service/read/ReadService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/PostHead.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/Reply.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/js/tableRowClick.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/net/post/getPersonal.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/net/post/putReply.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/net/read/getPostAndReply.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/views/ReadView.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/views/SpaceView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/48117fb2-af1f-491b-9846-8a1ab8a7af2d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/48117fb2-af1f-491b-9846-8a1ab8a7af2d.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/config/Configure.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/config/Configure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/Util/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/Util/JwtUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/config/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/config/GlobalExceptionHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/controller/post/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/controller/post/PostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/entity/post/PostReply.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/entity/post/PostReply.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/filter/TokenFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/filter/TokenFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/mapper/post/PostHeadMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/mapper/post/PostHeadMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/mapper/post/PostReplyMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/mapper/post/PostReplyMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/service/auth/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/service/auth/AccountService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/service/post/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/service/post/PostService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/HelloWorld.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/TheWelcome.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/WelcomeItem.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/icons/IconCommunity.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/icons/IconDocumentation.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/icons/IconEcosystem.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/icons/IconSupport.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/icons/IconTooling.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/net/auth/checkMe.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/net/auth/checkMe.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/net/mainView/formatLast_reply.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/js/formatLast_reply.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/net/mainView/tableRowClick.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/net/post/getPostHead.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/net/read/getPostHeadList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/net/post/putPost.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/net/post/putPost.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/router/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/views/MainView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/MainView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vite.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,41 +81,43 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JUnit.BackendApplicationTests.contextLoads.executor": "Run",
-    "Notification.DisplayName-DoNotAsk-Maven": "Maven",
-    "Notification.DoNotAsk-Maven": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.BackendApplication.executor": "Run",
-    "git-widget-placeholder": "master",
-    "jdk.selected.JAVA_MODULE": "corretto-17",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_interpreter_path": "node",
-    "nodejs_package_manager_path": "npm",
-    "npm.dev.executor": "Run",
-    "settings.editor.selected.configurable": "http.proxy",
-    "ts.external.directory.path": "D:\\StudyTools\\IntelliJ IDEA\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JUnit.BackendApplicationTests.contextLoads.executor&quot;: &quot;Run&quot;,
+    &quot;Notification.DisplayName-DoNotAsk-Maven&quot;: &quot;Maven&quot;,
+    &quot;Notification.DoNotAsk-Maven&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.BackendApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-17&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;http.proxy&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\StudyTools\\IntelliJ IDEA\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "vue.recent.templates": [
-      "Vue Composition API Component"
+  &quot;keyToStringList&quot;: {
+    &quot;vue.recent.templates&quot;: [
+      &quot;Vue Composition API Component&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\StudyTools\save\JavaSave\school-forum\frontend\src\net\read" />
+      <recent name="D:\StudyTools\save\JavaSave\school-forum\frontend\src\js" />
       <recent name="D:\StudyTools\save\JavaSave\school-forum\frontend\src\net\mainView" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -170,7 +198,10 @@
       <workItem from="1729173117204" duration="402000" />
       <workItem from="1729239655387" duration="8525000" />
       <workItem from="1729318741184" duration="26928000" />
-      <workItem from="1729428110841" duration="9227000" />
+      <workItem from="1729428110841" duration="9437000" />
+      <workItem from="1729577974763" duration="17305000" />
+      <workItem from="1729650656659" duration="1179000" />
+      <workItem from="1729750775448" duration="17448000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -204,7 +235,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729362012944</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="主页获取贴子&#10;点击贴子跳入贴子">
+      <option name="closed" value="true" />
+      <created>1729447633468</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1729447633468</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,6 +264,7 @@
     <MESSAGE value="前端环境配置" />
     <MESSAGE value="init" />
     <MESSAGE value="用户注册与登录&#10;发帖功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="用户注册与登录&#10;发帖功能" />
+    <MESSAGE value="主页获取贴子&#10;点击行跳入贴子" />
+    <option name="LAST_COMMIT_MESSAGE" value="主页获取贴子&#10;点击行跳入贴子" />
   </component>
 </project>

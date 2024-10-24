@@ -24,8 +24,8 @@ export default defineConfig({
         }
     },
     server: {
-        //host: '100.2.196.10',
-        host: '127.0.0.1',
+        host: '100.2.196.10',
+        //host: '127.0.0.1',
         port: 80,
         https: false,
         proxy: {

@@ -1,4 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import {checkMe} from "@/net/auth/checkMe.js";
+import {ElMessage} from "element-plus";
+import {getPostHeadList} from "@/net/read/getPostHeadList.js";
 
 
 const router = createRouter({
@@ -8,9 +11,6 @@ const router = createRouter({
             path:'/',
             name:'main',
             component:()=>import('@/views/MainView.vue'),
-            children:[
-
-            ]
         },
         {
             path:'/register',
@@ -26,6 +26,23 @@ const router = createRouter({
             path:'/post',
             name:'post',
             component:()=>import('@/views/PostView.vue')
+        },
+        {
+            path:'/read',
+            name:'read',
+            component:()=>import('@/views/ReadView.vue'),
+            beforeEnter: (to, from, next) => {
+                if (!to.query.pid) {
+                    next({ name: '/' });
+                } else {
+                    next();
+                }
+            }
+        },
+        {
+            path:'/space',
+            name:'space',
+            component:()=>import('@/views/SpaceView.vue')
         },
         {
             path:'/test',

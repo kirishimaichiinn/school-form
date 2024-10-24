@@ -3,7 +3,7 @@ import {ElMessage} from "element-plus";
 import router from "@/router/index.js";
 
 export function getPostHeadList(page,tableData){
-    post('/api/post/getPostHeadList', {
+    post('/api/read/getPostHeadList', {
             page:page.value
         },
         (data) => {

@@ -50,7 +50,7 @@ public class AccountService {
         if(token == null || jwtUtil.isTokenExpired(token)) return RestBean.failure("登录已失效");
         else {
             Account account = getAccountByToken(token);
-            return RestBean.success(Map.of("token",account.getToken(),"nickname", account.getNickname()));
+            return RestBean.success(Map.of("token",account.getToken(),"nickname", account.getNickname(),"id",account.getId()));
         }
     }
 

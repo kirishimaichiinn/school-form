@@ -10,6 +10,8 @@
         <div v-if="logged">
           你是{{ nickname }}
           <br>
+          <button @click="router.push('/space')">个人空间</button>
+          <br>
           <button @click="router.push('/post')">发帖</button>
         </div>
       </el-header>
@@ -29,22 +31,38 @@
 import router from "@/router/index.js";
 import {checkMe} from "@/net/auth/checkMe.js";
 import {ElMessage} from "element-plus";
-import {getPostHeadList} from "@/net/post/getPostHead.js";
-import {formatLast_reply} from "@/net/mainView/formatLast_reply.js";
-import {tableRowClick} from "@/net/mainView/tableRowClick.js";
+import {getPostHeadList} from "@/net/read/getPostHeadList.js";
+import {formatLast_reply} from "@/js/formatLast_reply.js";
+import {tableRowClick} from "@/js/tableRowClick.js";
 
 let logged = ref(false);
 let nickname;
 let page = ref(1);
 onBeforeMount(() => {
-  checkMe(()=>{logged.value = true});
+  checkMe(false,
+      ()=>{
+        logged.value = true
+        nickname = localStorage.getItem('nickname')
+      },
+      (msg)=>{
+        if(msg !== null) ElMessage.warning(msg)
+        localStorage.setItem('userToken','')
+      }
+  )
 })
-onMounted(() => {
-  nickname = localStorage.getItem('nickname')
+
+onBeforeMount(()=>{
+  let page_num = new URLSearchParams(window.location.search).get('page')
+  if(page_num > 0){
+    page.value = page_num
+  }
+
   getPostHeadList(page,tableData)
 })
+
+
 const test = function () {
-  getPostHeadList(ref(1))
+  console.log(tableData)
 }
 
 const tableData = ref([])

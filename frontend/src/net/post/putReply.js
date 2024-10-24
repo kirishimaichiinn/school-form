@@ -3,26 +3,21 @@ import {post} from "@/net/index.js";
 import router from "@/router/index.js";
 import {checkMe} from "@/net/auth/checkMe.js";
 
-export function putPost(form) {
-    if (!form.title) {
-        ElMessage.warning('请填写标题')
-        return
-    }
+export function putReply(form){
     if (!form.text) {
         ElMessage.warning('请填写内容')
-        return;
+        return
     }
     checkMe(true,
         (token)=>{
-        post('/api/post/addPost', {
-                title:form.title,
+        post('/api/post/addReply', {
+                pid:form.pid,
                 text:form.text,
                 token:token
             },
             (data) => {
-                ElMessage.success("发布成功")
-                router.push('/')
-                setTimeout(()=>{location.reload()},50)
+                ElMessage.success("回复成功")
+                window.location.reload()
             },
             (msg)=>{
                 ElMessage.warning(msg)

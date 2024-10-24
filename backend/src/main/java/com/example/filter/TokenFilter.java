@@ -29,7 +29,7 @@ public class TokenFilter implements Filter {
         String path = httpRequest.getRequestURI();
         String token = httpRequest.getParameter("token");
 
-        if (!path.matches("/api/post/.*") || path.equals("/api/post/getPostHeadList")){
+        if (!path.matches("/api/post/.*")){
             filterChain.doFilter(servletRequest, servletResponse);
             return;
         }

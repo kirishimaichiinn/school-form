@@ -1,6 +1,7 @@
 package com.example.Util;
 
 import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
@@ -37,7 +38,12 @@ public class JwtUtil {
     }
 
     public boolean isTokenExpired(String token) {
-        return extractClaims(token).getExpiration().before(new Date());
+        try {
+            return extractClaims(token).getExpiration().before(new Date());
+        } catch (ExpiredJwtException e) {
+            //对于过期的token，会引发异常并返回true
+            return true;
+        }
     }
 
     public String extractUsername(String token) {

@@ -1,5 +1,6 @@
 package com.example.config;
 
+import com.example.Util.FailureRestException;
 import com.example.Util.RestBean;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
@@ -25,6 +26,10 @@ public class GlobalExceptionHandler {
         return RestBean.failure("缺少参数");
     }
 
+    @ExceptionHandler(FailureRestException.class)
+    public ResponseEntity<RestBean.RestData<Object>> FailureRestException(FailureRestException ex){
+        return RestBean.failure(ex.getMessage());
+    }
     @ExceptionHandler(Exception.class)
     public ResponseEntity<RestBean.RestData<Object>> handleGeneralException(Exception ex) {
         return RestBean.failure(500, "意外错误"+ex.getMessage());
