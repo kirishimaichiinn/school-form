@@ -3,16 +3,16 @@
     <el-container>
       <el-header style="height: auto">这是头部
         <br>
-        <button @click="router.push('/register')">注册</button>
-        <button @click="router.push('/login')">登录</button>
-        <button @click="test">测试</button>
+        <el-button @click="router.push('/register')">注册</el-button>
+        <el-button @click="router.push('/login')">登录</el-button>
         <br>
         <div v-if="logged">
           你是{{ nickname }}
           <br>
-          <button @click="router.push('/space')">个人空间</button>
+          <el-button @click="router.push('/space')">个人空间</el-button>
           <br>
-          <button @click="router.push('/post')">发帖</button>
+          <el-button @click="router.push('/post')">发帖</el-button>
+          <el-button @click="router.push('/note')">写笔记</el-button>
         </div>
       </el-header>
       <el-main>

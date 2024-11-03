@@ -17,7 +17,7 @@ export function login(form) {
                 localStorage.setItem('userToken',data.data.token);
                 localStorage.setItem('nickname',data.data.nickname);
                 router.push('/')
-                setTimeout(()=>{location.reload()},100)
+                //setTimeout(()=>{location.reload()},100)
             },
             (msg)=>{
                 ElMessage.warning(msg)

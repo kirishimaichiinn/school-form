@@ -1,7 +1,10 @@
 <template>
   <div class="common-layout">
     <el-container>
-      <el-header style="height: auto;">这是头部</el-header>
+      <el-header style="height: auto;">
+        <el-button @click="backToIndex">回到主页</el-button>
+        这是头部
+      </el-header>
       <el-main>
         <PostHead :postHead="postHead"></PostHead>
         <el-table class="reply-table" :data="replyList" border style="width: 100%;">
@@ -33,6 +36,7 @@ import PostHead from "@/components/PostHead.vue";
 import Reply from "@/components/Reply.vue";
 import {tableRowClick} from "@/js/tableRowClick.js";
 import {putReply} from "@/net/post/putReply.js";
+import {backToIndex} from "@/js/backToIndex.js";
 
 const postHead = ref()
 const replyList = ref([])

@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.example.entity.post.PostHead;
 import jakarta.annotation.Resource;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
@@ -26,4 +27,10 @@ public interface PostHeadMapper extends BaseMapper<PostHead> {
 
     @Select("select * from post_head where author_id = #{author_id} and status = '2' order by last_reply desc limit #{passRows},#{getRows}")
     List<PostHead> getPersonalNote(int author_id,int passRows,int getRows);
+
+    @Options(useGeneratedKeys = true, keyProperty = "id")
+    int insert(PostHead postHead);
+
+    @Update("update post_head set status = '0' where id = #{id}")
+    boolean delPostHead(int id);
 }

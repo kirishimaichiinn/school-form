@@ -8,7 +8,7 @@ export function checkMe(mustLogin,success,failure) {
         if(mustLogin){
             ElMessage.warning("请先登录")
             router.push('/login')
-            setTimeout(()=>{location.reload()},50)
+            //setTimeout(()=>{location.reload()},50)
         }
         return
     }
@@ -27,7 +27,7 @@ export function checkMe(mustLogin,success,failure) {
                 localStorage.setItem('userToken','');
                 ElMessage.warning("请先登录")
                 router.push('/login')
-                setTimeout(()=>{location.reload()},50)
+                //setTimeout(()=>{location.reload()},50)
             }
         }
     )

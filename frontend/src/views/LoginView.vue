@@ -1,4 +1,5 @@
 <template>
+  <el-button @click="backToIndex">回到主页</el-button>
   <div style="width: 100vw;height: 100vh;overflow: hidden;display: flex">
     <div style=" width: 400px;background-color: white;margin: -100px auto auto;">
       <div style="text-align: center;margin: 0 20px">
@@ -22,6 +23,7 @@
 
 <script setup>
 import {login} from "@/net/auth/login.js";
+import {backToIndex} from "@/js/backToIndex.js";
 
 const form = reactive({
   account: '',

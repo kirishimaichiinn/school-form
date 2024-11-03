@@ -24,4 +24,9 @@ public class ReadController {
     public ResponseEntity<RestBean.RestData<Object>> getPostAndReply(@RequestParam("pid") int pid){
         return readService.getPostAndReply(pid);
     }
+
+    @PostMapping("/getNote")
+    public ResponseEntity<RestBean.RestData<Object>> getNote(@RequestParam("nid") int nid){
+        return readService.getNote(nid);
+    }
 }

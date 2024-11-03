@@ -21,8 +21,7 @@ export function putPost(form) {
             },
             (data) => {
                 ElMessage.success("发布成功")
-                router.push('/')
-                setTimeout(()=>{location.reload()},50)
+                router.push(`/read?pid=${data.data.pid}`)
             },
             (msg)=>{
                 ElMessage.warning(msg)

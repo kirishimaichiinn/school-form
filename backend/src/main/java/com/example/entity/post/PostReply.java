@@ -14,5 +14,5 @@ public class PostReply {
     Integer speaker_id;
     String speaker_name;
     String text;
-    Integer status;
+    Integer status = 1;
 }

@@ -1,7 +1,10 @@
 <template>
   <div class="common-layout">
     <el-container>
-      <el-header style="height: auto;">这是头部</el-header>
+      <el-header style="height: auto;">
+        <el-button @click="backToIndex">回到主页</el-button>
+        这是头部
+      </el-header>
       <el-main>
         <div>
           <el-input type="text" v-model="form.title" style="margin-top: 15px" placeholder="标题"/>
@@ -18,6 +21,7 @@
 
 <script setup>
 import {putPost} from "@/net/post/putPost.js";
+import {backToIndex} from "@/js/backToIndex.js";
 
 const form = reactive({
   title: '',

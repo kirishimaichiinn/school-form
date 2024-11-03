@@ -6,6 +6,7 @@ import com.example.entity.auth.Account;
 import com.example.entity.post.PostHead;
 import com.example.entity.post.PostReply;
 import com.example.service.post.PostService;
+import com.example.service.read.ReadService;
 import jakarta.annotation.Resource;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,7 +20,8 @@ import java.util.Map;
 public class PostController {
     @Resource
     PostService postService;
-
+    @Resource
+    ReadService readService;
 
     @PostMapping("/addPost")
     public ResponseEntity<RestBean.RestData<Object>> addPost(@RequestAttribute("account") Account account, @RequestParam("title") String title, @RequestParam("text") String text) {
@@ -70,6 +72,91 @@ public class PostController {
         }
 
     }
+
+    @PostMapping("/delReply")
+    public ResponseEntity<RestBean.RestData<Object>> delReply(@RequestAttribute("account") Account account, @RequestParam("id") int id){
+        PostReply reply = readService.getReplyById(id);
+        if(reply == null)   return RestBean.failure("该回复不存在");
+        if(reply.getStatus() != 1 || !reply.getSpeaker_id().equals(account.getId())) return RestBean.failure("删除失败");
+
+        boolean del = readService.delReplyById(id);
+        if(!del) return RestBean.failure("删除失败");
+
+        return RestBean.success("");
+    }
+
+    @PostMapping("/delPost")
+    public ResponseEntity<RestBean.RestData<Object>> delPost(@RequestAttribute("account") Account account, @RequestParam("id") int id){
+        PostHead postHead = readService.getPostHeadById(id);
+        if(postHead == null)   return RestBean.failure("该主题不存在");
+        if(postHead.getStatus() != 1 || !postHead.getAuthor_id().equals(account.getId())) return RestBean.failure("删除失败");
+
+        return readService.delPostHeadById(id);
+    }
+
+    @PostMapping("/updatePost")
+    public ResponseEntity<RestBean.RestData<Object>> updatePost(@RequestAttribute("account") Account account, @RequestParam("id") int id,@RequestParam("title") String title, @RequestParam("text") String text) {
+        PostHead postHead = readService.getPostHeadById(id);
+        if(postHead == null)   return RestBean.failure("该主题不存在");
+        if(postHead.getStatus() != 1 || !postHead.getAuthor_id().equals(account.getId())) return RestBean.failure("更新失败");
+
+        postHead.setTitle(title);
+        postHead.setText(text);
+        postHead.setLast_reply(LocalDateTime.now());
+
+        return postService.updatePost(postHead);
+    }
+
+    @PostMapping("/updateReply")
+    public ResponseEntity<RestBean.RestData<Object>> updateReply(@RequestAttribute("account") Account account, @RequestParam("id") int id, @RequestParam("text") String text){
+        PostReply reply = readService.getReplyById(id);
+        if(reply == null)   return RestBean.failure("该回复不存在");
+        if(reply.getStatus() != 1 || !reply.getSpeaker_id().equals(account.getId())) return RestBean.failure("更新失败");
+
+        reply.setText(text);
+
+        return postService.updateReply(reply);
+    }
+
+    @PostMapping("/addNote")
+    public ResponseEntity<RestBean.RestData<Object>> addNote(@RequestAttribute("account") Account account, @RequestParam("title") String title, @RequestParam("text")List<String> list){
+        PostHead postHead = new PostHead();
+
+        postHead.setTitle(title);
+        postHead.setText(list.get(0));
+        postHead.setAuthor_id(account.getId());
+        postHead.setAuthor_name(account.getNickname());
+        postHead.setLast_reply(LocalDateTime.now());
+        postHead.setStatus(2);
+
+        return postService.addNote(postHead,list);
+    }
+
+    @PostMapping("/updateNote")
+    public ResponseEntity<RestBean.RestData<Object>> updateNote(@RequestAttribute("account") Account account, @RequestParam("nid") int nid, @RequestParam("title") String title, @RequestParam("text")List<String> list){
+        PostHead postHead = new PostHead();
+
+        postHead.setId(nid);
+        postHead.setTitle(title);
+        postHead.setText(list.get(0));
+        postHead.setAuthor_id(account.getId());
+        postHead.setAuthor_name(account.getNickname());
+        postHead.setLast_reply(LocalDateTime.now());
+        postHead.setStatus(2);
+
+        return postService.updateNote(postHead,list);
+    }
+
+    @PostMapping("/delNote")
+    public ResponseEntity<RestBean.RestData<Object>> delNote(@RequestAttribute("account") Account account, @RequestParam("id") int id){
+        PostHead postHead = readService.getPostHeadById(id);
+        if(postHead == null)   return RestBean.failure("该主题不存在");
+        if(postHead.getStatus() != 2 || !postHead.getAuthor_id().equals(account.getId())) return RestBean.failure("删除失败");
+
+        return readService.delPostHeadById(id);
+    }
+
+
 
 
     /*@PostMapping("/checkMe")

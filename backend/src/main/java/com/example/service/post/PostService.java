@@ -17,6 +17,7 @@ import org.springframework.transaction.interceptor.TransactionAspectSupport;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class PostService {
@@ -33,7 +34,7 @@ public class PostService {
         int insert = postHeadMapper.insert(postHead);
         if (insert <= 0) return RestBean.failure(500, "数据添加失败");
 
-        return RestBean.success("", "发布成功");
+        return RestBean.success(Map.of("pid",postHead.getId()), "发布成功");
     }
 
     @Transactional
@@ -94,6 +95,74 @@ public class PostService {
         int getNum = constConfig.getMainViewPageNum();
 
         return postReplyMapper.getPersonalReply(account.getId(), passRows, getNum);
+    }
 
+    public ResponseEntity<RestBean.RestData<Object>> updatePost(PostHead postHead) {
+        int insert = postHeadMapper.updateById(postHead);
+        if (insert <= 0) return RestBean.failure(500, "数据更新失败");
+
+        return RestBean.success("", "更新成功");
+    }
+
+    @Transactional
+    public ResponseEntity<RestBean.RestData<Object>> updateReply(PostReply reply) {
+        try {
+            int insert = postReplyMapper.updateById(reply);
+            if (insert <= 0) return RestBean.failure(500, "数据更新失败");
+
+            boolean updateLastReply = postHeadMapper.updateLastReply(reply.getHead_id(), LocalDateTime.now());
+            if (!updateLastReply) {
+                throw new FailureRestException("回复时间更新失败");
+            }
+
+            return RestBean.success("", "更新成功");
+        } catch (Exception e) {
+            TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
+            return RestBean.failure(500, e.getMessage());
+        }
+    }
+
+    @Transactional
+    public ResponseEntity<RestBean.RestData<Object>> addNote(PostHead postHead,List<String> list) {
+        try {
+            int insert = postHeadMapper.insert(postHead);
+            if(insert <= 0)  throw new FailureRestException("数据插入失败");
+
+            for(int i = 1;i < list.size();i++){
+                PostReply reply = new PostReply();
+                reply.setHead_id(postHead.getId());
+                reply.setSpeaker_id(postHead.getAuthor_id());
+                reply.setSpeaker_name(postHead.getAuthor_name());
+                reply.setText(list.get(i));
+                reply.setFloor(i);
+                reply.setHead_title(postHead.getTitle());
+
+                int inserted = postReplyMapper.insert(reply);
+                if(inserted <= 0)  throw new FailureRestException("数据插入失败");
+            }
+
+            return RestBean.success(Map.of("nid",postHead.getId()), "发布成功");
+        } catch (Exception e) {
+            TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
+            return RestBean.failure(500, e.getMessage());
+        }
+    }
+
+    @Transactional
+    public ResponseEntity<RestBean.RestData<Object>> updateNote(PostHead postHead,List<String> list) {
+        try {
+            int update = postHeadMapper.updateById(postHead);
+            if(update <= 0)  throw new FailureRestException("数据更新失败");
+
+            for(int i = 1;i < list.size();i++){
+                boolean updateReply = postReplyMapper.updateReplyByHeadAndFloor(list.get(i), postHead.getId(), i);
+                if(!updateReply)  throw new FailureRestException("数据更新失败");
+            }
+
+            return RestBean.success(Map.of("nid",postHead.getId()), "更新成功");
+        } catch (Exception e) {
+            TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
+            return RestBean.failure(500, e.getMessage());
+        }
     }
 }

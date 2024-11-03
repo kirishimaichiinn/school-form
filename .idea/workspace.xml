@@ -4,46 +4,47 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3008b374-7e15-4b34-9cce-3090a3b6b5b7" name="更改" comment="主页获取贴子&#10;点击贴子跳入贴子">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/Util/FailureRestException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/controller/read/ReadController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/service/read/ReadService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/PostHead.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/Reply.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/js/tableRowClick.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/net/post/getPersonal.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/net/post/putReply.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/net/read/getPostAndReply.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/views/ReadView.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/views/SpaceView.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/48117fb2-af1f-491b-9846-8a1ab8a7af2d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/48117fb2-af1f-491b-9846-8a1ab8a7af2d.xml" afterDir="false" />
+    <list default="true" id="3008b374-7e15-4b34-9cce-3090a3b6b5b7" name="更改" comment="update">
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/DropdownMenu.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/js/backToIndex.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/js/checkAuth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/js/confirmDel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/js/goBack.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/js/gotoEdit.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/net/post/delNote.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/net/post/delPost.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/net/post/delReply.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/net/post/putNote.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/net/post/update.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/net/post/updateNote.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/net/read/getNote.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/views/EditView.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/views/NoteView.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/views/ReadNoteView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/Util/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/Util/JwtUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/config/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/config/GlobalExceptionHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/controller/post/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/controller/post/PostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/controller/read/ReadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/controller/read/ReadController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/entity/post/PostReply.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/entity/post/PostReply.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/filter/TokenFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/filter/TokenFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/mapper/post/PostHeadMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/mapper/post/PostHeadMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/mapper/post/PostReplyMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/mapper/post/PostReplyMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/service/auth/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/service/auth/AccountService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/service/post/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/service/post/PostService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/HelloWorld.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/TheWelcome.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/WelcomeItem.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/icons/IconCommunity.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/icons/IconDocumentation.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/icons/IconEcosystem.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/icons/IconSupport.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/icons/IconTooling.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/service/read/ReadService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/service/read/ReadService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/PostHead.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/PostHead.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Reply.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Reply.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/js/tableRowClick.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/js/tableRowClick.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/net/auth/checkMe.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/net/auth/checkMe.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/net/mainView/formatLast_reply.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/js/formatLast_reply.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/net/mainView/tableRowClick.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/net/post/getPostHead.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/net/read/getPostHeadList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/net/auth/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/net/auth/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/net/auth/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/net/auth/register.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/net/post/putPost.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/net/post/putPost.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/net/read/getPostAndReply.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/net/read/getPostAndReply.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/LoginView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/LoginView.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/views/MainView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/MainView.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vite.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/PostView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/PostView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/ReadView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/ReadView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/RegisterView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/RegisterView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/SpaceView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/SpaceView.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,8 +56,8 @@
       <list>
         <option value="Record" />
         <option value="Interface" />
-        <option value="Vue Composition API Component" />
         <option value="Class" />
+        <option value="Vue Composition API Component" />
         <option value="JavaScript File" />
       </list>
     </option>
@@ -116,8 +117,8 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\StudyTools\save\JavaSave\school-forum\frontend\src\net\read" />
       <recent name="D:\StudyTools\save\JavaSave\school-forum\frontend\src\js" />
+      <recent name="D:\StudyTools\save\JavaSave\school-forum\frontend\src\net\read" />
       <recent name="D:\StudyTools\save\JavaSave\school-forum\frontend\src\net\mainView" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -201,7 +202,10 @@
       <workItem from="1729428110841" duration="9437000" />
       <workItem from="1729577974763" duration="17305000" />
       <workItem from="1729650656659" duration="1179000" />
-      <workItem from="1729750775448" duration="17448000" />
+      <workItem from="1729750775448" duration="18141000" />
+      <workItem from="1729837323520" duration="645000" />
+      <workItem from="1730556425878" duration="23381000" />
+      <workItem from="1730623451817" duration="8856000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -243,7 +247,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729447633468</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="update">
+      <option name="closed" value="true" />
+      <created>1729787032478</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1729787032478</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -265,6 +277,7 @@
     <MESSAGE value="init" />
     <MESSAGE value="用户注册与登录&#10;发帖功能" />
     <MESSAGE value="主页获取贴子&#10;点击行跳入贴子" />
-    <option name="LAST_COMMIT_MESSAGE" value="主页获取贴子&#10;点击行跳入贴子" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
 </project>

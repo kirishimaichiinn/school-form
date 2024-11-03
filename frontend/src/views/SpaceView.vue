@@ -3,6 +3,7 @@
     <el-container>
       <el-header style="height: auto;">
         <div>
+          <el-button @click="backToIndex">回到主页</el-button>
           你是{{ nickname }}
           <br>
         </div>
@@ -11,7 +12,7 @@
         <div class="custom-style">
           <el-segmented v-model="selectPage" :options="pageName" size="large" block @change="changePage"/>
         </div>
-        <el-table :data="showTable" stripe border style="width: 100%">
+        <el-table :data="showTable" stripe border @row-click="tableRowClick" style="width: 100%">
           <el-table-column v-for="column in tableColumns" :key="column.prop" :prop="column.prop" :label="column.label" :width="column.width" :formatter="column.formatter|| undefined" />
         </el-table>
       </el-main>
@@ -27,6 +28,7 @@ import {checkMe} from "@/net/auth/checkMe.js";
 import {getPersonal} from "@/net/post/getPersonal.js";
 import {tableRowClick} from "@/js/tableRowClick.js";
 import {formatLast_reply} from "@/js/formatLast_reply.js";
+import {backToIndex} from "@/js/backToIndex.js";
 
 const selectPage = ref('发贴')
 
