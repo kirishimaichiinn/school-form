@@ -55,11 +55,19 @@ const addPage = () => {
   form.text.push('')
   pageNum.value++
   currentPage.value = pageNum.value
+
+  nextTick(() => {
+    document.querySelector('#inputText').focus();
+  });
 }
 const delPage = () => {
   form.text.splice(currentPage.value - 1, 1)
   pageNum.value--
   if (currentPage.value - 1 === pageNum.value) currentPage.value--
+
+  nextTick(() => {
+    document.querySelector('#inputText').focus();
+  });
 }
 </script>
 

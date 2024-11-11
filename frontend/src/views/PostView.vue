@@ -12,7 +12,8 @@
         </div>
       </el-main>
       <el-footer>
-      <button @click="putPost(form)">提交</button>
+        <el-button @click="putPost(form)">提交</el-button>
+        <InsertNote :text="form.text" @update:text="updateText"></InsertNote>
       </el-footer>
     </el-container>
   </div>
@@ -22,11 +23,15 @@
 <script setup>
 import {putPost} from "@/net/post/putPost.js";
 import {backToIndex} from "@/js/backToIndex.js";
+import InsertNote from "@/components/InsertNote.vue";
 
 const form = reactive({
   title: '',
   text: ''
 })
+const updateText = (newText) => {
+  form.text = newText;
+};
 </script>
 
 <style scoped>
